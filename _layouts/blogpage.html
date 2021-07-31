@@ -1,0 +1,47 @@
+---
+layout: default
+
+---
+<section id="slider" class="hero p-0 odd featured">
+    <div class="swiper-container no-slider slider-h-100">
+        <div class="swiper-wrapper">
+
+            <!-- Item 1 -->
+            <div class="swiper-slide slide-center">
+                
+                <img src="/assets/images/{{ page.image }}.jpg" class="full-image" data-mask="50">
+                
+                <div class="slide-content row text-center">
+                    <div class="col-12 mx-auto inner">
+                        <h1 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text">{{ page.title }}</h1>
+                        <nav data-aos="zoom-out-up" data-aos-delay="800" aria-label="breadcrumb">
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="content" class="section-1 body-mode-dark single featured">
+    <div class="container">
+        <div class="row">
+
+            <!-- Main -->
+            <main class="col-12 p-0">
+                <div class="row">
+                    <div class="col-12 align-self-center">
+                        <h2 class="featured mt-0 ml-0">Content</h2>
+                        {{ page.content }}
+                        <!-- Post Holder -->
+                        <ul class="mb-5 post-holder">
+                            <li class="post-meta-item">
+                                <time class="date"><span class="posted-on">Posted on <a rel="bookmark"><time class="entry-date published updated" datetime="2018-11-01T06:18:46+00:00">{{ page.date || date: "%d-%m-%Y" }}</time></a></span></time>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>

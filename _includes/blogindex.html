@@ -4,11 +4,11 @@
 			<div class="row text-center intro">
 				<div class="col-12">
 					<h2 class="super effective-static-text">{{ sect.title }}</h2>
-					<p class="text-max-800"><strong>Coming Soon</strong>.<br></p>
+					<p class="text-max-800"><strong> My Blog Posts</strong>.<br></p>
 				</div>
 			</div>
-			<!--
-			<div class="row justify-content-center text-center">
+
+			{% comment %} <div class="row justify-content-center text-center">
 				<div class="col-12">
 					<div class="btn-group btn-group-toggle" data-toggle="buttons">
 						{% for button in site.data.index.buttons %}
@@ -23,17 +23,18 @@
 						{% endfor %}
 					</div>
 				</div>
-			</div>
+			</div> {% endcomment %}
 			<div class="row items filter-items">
-				{% for post in site.posts %}
+				{% for post in site.posts limit:8%}
 					{% if post.status == "pub" %}
-						{%for cat in post.categories%}<div class="col-12 col-md-6 col-lg-3 item filter-item" data-groups= '["{{cat}}",]'>
-						{% endfor %}
+						<div class="col-12 col-md-6 col-lg-3 item filter-item" data-groups= '["{{cat}}",]'>
+
+						<a href="{{ post.url }}" class="image-over" >
 						<div class="row card p-0 text-center">
-							<div class="gallery">
-								<a href="{{ post.url }}" class="image-over">
+							<div>
+								
 									<img src="/assets/images/{{ post.image }}" alt="{{post.title}}"/>
-								</a>
+								
 							</div>
 							<div class="card-caption col-12 p-0">
 								<div class="card-body">
@@ -43,10 +44,11 @@
 									<p>{{ post.excerpt }}</p>
 								</div>
 							</div>
+							</a>
+							</div>
 						{% endif %}
 					{% endfor %}
 				</div>
-				-->
 				
 			</div>
 			<div class="col-1 filter-sizer"></div>
